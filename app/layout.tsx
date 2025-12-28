@@ -5,7 +5,31 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Hernan Aronson | BI & Data Analyst",
   description:
-    "BI & Data Analyst specializing in SQL, Python and Power BI. Turning data into clear, actionable business insights.",
+    "Turning data into clear, actionable business insights using SQL, Python and BI tools.",
+  openGraph: {
+    title: "Hernan Aronson | BI & Data Analyst",
+    description:
+      "Turning data into clear, actionable business insights using SQL, Python and BI tools.",
+    url: "https://www.hernanaronson.com/",
+    siteName: "Hernan Aronson Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // 👈 va a public/og-image.png
+        width: 1200,
+        height: 630,
+        alt: "Hernan Aronson – BI & Data Analyst",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hernan Aronson | BI & Data Analyst",
+    description:
+      "Turning data into clear, actionable business insights using SQL, Python and BI tools.",
+    images: ["/og-image.png"],
+  },
 };
 
 const navItemClass =
