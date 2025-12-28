@@ -1,5 +1,5 @@
 const PrimaryButton =
-  "inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition";
+  "inline-flex items-center justify-center rounded-xl bg-blue-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition";
 
 function ProjectCard({
   title,
@@ -49,7 +49,7 @@ function ProjectCard({
       <ul className="mt-6 space-y-2 text-base text-slate-700">
         {bullets.map((b) => (
           <li key={b} className="flex gap-3">
-            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-900" />
             <span>{b}</span>
           </li>
         ))}
@@ -74,14 +74,14 @@ export default function PortfolioPage() {
       <div className="grid gap-6">
         <ProjectCard
           title="SPY ROI ML Model"
-          objective="Analyze forward returns based on technical signals and evaluate predictive strength."
+          objective="Machine learning model to estimate the probability that the S&P 500 Index will achieve a 6-month forward return greater than +5%. The project includes full feature engineering, model training, evaluation, interpretation, and reproducibility steps."
           tags={["Python", "Pandas", "Scikit-learn"]}
           bullets={[
             "Feature engineering on historical market data",
             "Evaluation across multiple horizons",
             "Clear interpretation of results for decision-making",
           ]}
-          href="https://github.com/hernaninv"
+          href="https://github.com/hernaninv/SPY-ROI-120d-ML-Model"
         />
 
         <ProjectCard
@@ -93,7 +93,7 @@ export default function PortfolioPage() {
             "Model comparison using standard metrics",
             "Insights on key churn drivers",
           ]}
-          href="https://github.com/hernaninv"
+          href="https://github.com/hernaninv/TelecomChurn-ML-Project"
         />
 
         <ProjectCard
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
             "Clean dashboard layout with narrative insights",
             "Focus on stakeholder usability and clarity",
           ]}
-          href="https://github.com/hernaninv"
+          href="https://github.com/hernaninv/HappyInsurance-BI-Project"
         />
       </div>
     </div>

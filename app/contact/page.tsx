@@ -1,28 +1,39 @@
 const PrimaryButton =
-  "inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition";
+  "inline-flex items-center justify-center rounded-xl bg-blue-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition";
 
 function ContactCard({
   title,
   value,
   href,
+  buttonLabel,
 }: {
   title: string;
   value: string;
   href: string;
+  buttonLabel: string;
 }) {
+  const isExternal =
+    href.startsWith("http://") || href.startsWith("https://");
+
   return (
     <div className="rounded-3xl bg-slate-50 p-7 ring-1 ring-slate-200">
       <div className="text-lg font-semibold text-slate-900">{title}</div>
       <div className="mt-3 text-base text-slate-700 break-words">{value}</div>
 
       <div className="mt-5">
-        <a href={href} className={PrimaryButton} target="_blank" rel="noreferrer">
-          Open →
+        <a
+          href={href}
+          className={PrimaryButton}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noreferrer" : undefined}
+        >
+          {buttonLabel} →
         </a>
       </div>
     </div>
   );
 }
+
 
 export default function ContactPage() {
   return (
@@ -43,21 +54,28 @@ export default function ContactPage() {
             title="Email"
             value="hernan.ar@alumni.technion.ac.il"
             href="mailto:hernan.ar@alumni.technion.ac.il"
+            buttonLabel="Send"
           />
+
           <ContactCard
             title="Phone"
             value="(+972) 054-203-6164"
             href="tel:+972542036164"
+            buttonLabel="Call"
           />
+
           <ContactCard
             title="LinkedIn"
             value="linkedin.com/in/hernanaronson"
             href="https://www.linkedin.com/in/hernanaronson/"
+            buttonLabel="Open"
           />
+
           <ContactCard
             title="GitHub"
             value="github.com/hernaninv"
             href="https://github.com/hernaninv"
+            buttonLabel="Open"
           />
         </div>
       </section>

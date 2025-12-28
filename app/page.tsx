@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const PrimaryButton =
-  "inline-flex items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-700 transition";
+  "inline-flex items-center justify-center rounded-xl bg-blue-900 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 const PrimaryButton =
-  "inline-flex items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-700 transition";
+  "inline-flex items-center justify-center rounded-xl bg-blue-900 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition";
 
 export default function ResumePage() {
   return (
@@ -24,19 +24,19 @@ export default function ResumePage() {
         <h2 className="mt-10 text-2xl font-semibold text-slate-900">Core Skills</h2>
         <ul className="mt-4 space-y-2 text-lg text-slate-700">
           <li className="flex gap-3">
-            <span className="mt-2 h-2 w-2 rounded-full bg-blue-600" />
+            <span className="mt-2 h-2 w-2 rounded-full bg-blue-900" />
             SQL querying, joins and KPI reporting
           </li>
           <li className="flex gap-3">
-            <span className="mt-2 h-2 w-2 rounded-full bg-blue-600" />
+            <span className="mt-2 h-2 w-2 rounded-full bg-blue-900" />
             Power BI dashboards, DAX and data modeling
           </li>
           <li className="flex gap-3">
-            <span className="mt-2 h-2 w-2 rounded-full bg-blue-600" />
+            <span className="mt-2 h-2 w-2 rounded-full bg-blue-900" />
             Python for data analysis (EDA, Pandas)
           </li>
           <li className="flex gap-3">
-            <span className="mt-2 h-2 w-2 rounded-full bg-blue-600" />
+            <span className="mt-2 h-2 w-2 rounded-full bg-blue-900" />
             Advanced Excel and reporting automation
           </li>
         </ul>
