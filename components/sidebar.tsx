@@ -16,8 +16,17 @@ export default function Sidebar() {
   return (
     <aside className="fixed left-0 top-0 hidden h-screen w-72 flex-col bg-gradient-to-b from-slate-950 to-blue-950 px-7 py-8 text-white lg:flex">
       <div>
-        <div className="text-2xl font-semibold tracking-tight">Hernan Aronson</div>
-        <div className="mt-1 text-lg text-slate-200">BI & Data Analyst</div>
+        <Link href="/" className="inline-flex items-center gap-3">
+          <img
+            src="/brand/img1.svg"
+            alt="Logo"
+            className="h-10 w-10 border border-red-500"
+          />
+          <div>
+            <div className="text-2xl font-semibold tracking-tight">Hernan Aronson</div>
+            <div className="mt-1 text-lg text-slate-200">BI & Data Analyst</div>
+          </div>
+        </Link>
       </div>
 
       <nav className="mt-10 space-y-3">

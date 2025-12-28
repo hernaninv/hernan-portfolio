@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="28" fill="#020617"></rect>
+
+  <!-- lens -->
+  <circle cx="52" cy="52" r="24" stroke="#e5e7eb" stroke-width="4" fill="none"></circle>
+  <line x1="70" y1="70" x2="88" y2="88" stroke="#e5e7eb" stroke-width="4" stroke-linecap="round"></line>
+
+  <!-- insight point -->
+  <circle cx="58" cy="46" r="5" fill="#2563eb"></circle>
+</svg>

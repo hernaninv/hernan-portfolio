@@ -50,13 +50,22 @@ export default function RootLayout({
           {/* Sidebar */}
           <aside className="lg:fixed lg:inset-y-0 lg:left-0 lg:w-72 bg-gradient-to-b from-slate-900 to-blue-950 text-white">
             <div className="flex h-full flex-col px-6 py-8">
-              <div className="space-y-1">
-                <div className="text-2xl font-semibold tracking-tight">
-                  Hernan Aronson
-                </div>
-                <div className="text-sm font-medium text-slate-200/90">
-                  BI & Data Analyst
-                </div>
+              <div className="space-y-2">
+                <Link href="/" className="inline-flex items-center gap-3">
+                  <img
+                    src="/brand/logo-mark.svg"
+                    alt="Hernan Aronson logo"
+                    className="h-10 w-10 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)]"
+                  />
+                  <div>
+                    <div className="text-2xl font-semibold tracking-tight">
+                      Hernan Aronson
+                    </div>
+                    <div className="text-sm font-medium text-slate-200/90">
+                      BI & Data Analyst
+                    </div>
+                  </div>
+                </Link>
               </div>
 
               <nav className="mt-10 space-y-2">
