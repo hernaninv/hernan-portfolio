@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     "Python Data Analysis",
     "Hernan Aronson",
   ],
+  openGraph: {
+  title: "Hernan Aronson | BI & Data Analyst",
+  description:
+    "BI & Data Analyst specializing in SQL, Python and Power BI. Turning data into clear, actionable business insights.",
+  url: "https://www.hernanaronson.com",
+  siteName: "Hernan Aronson Portfolio",
+  type: "website",
+},
 };
 
 export default function RootLayout({
