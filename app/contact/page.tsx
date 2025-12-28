@@ -20,6 +20,15 @@ export default function ContactPage() {
         </div>
 
         <div>
+          <h2 className="text-lg font-semibold">Phone</h2>
+          <a
+            className="mt-2 inline-block text-blue-600"
+          >
+            (+972) 054-203-6164
+          </a>
+        </div>
+
+        <div>
           <h2 className="text-lg font-semibold">LinkedIn</h2>
           <a
             className="mt-2 inline-block text-blue-600 hover:underline"
