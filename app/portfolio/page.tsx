@@ -1,97 +1,113 @@
-const projects = [
-  {
-    title: "SPY ROI ML Model",
-    objective:
-      "Analyze forward returns based on technical signals and evaluate predictive strength.",
-    tech: ["Python", "Pandas", "Scikit-learn"],
-    highlights: [
-      "Feature engineering on historical market data",
-      "Evaluation across multiple horizons",
-      "Clear interpretation of results for decision-making",
-    ],
-    link: "https://github.com/hernaninv",
-  },
-  {
-    title: "Telecom Churn ML",
-    objective:
-      "Predict churn and identify key drivers to support retention strategies.",
-    tech: ["Python", "Pandas", "Scikit-learn"],
-    highlights: [
-      "EDA and data cleaning workflow",
-      "Model comparison using standard metrics",
-      "Insights on key churn drivers",
-    ],
-    link: "https://github.com/hernaninv",
-  },
-  {
-    title: "Happy Insurance BI",
-    objective:
-      "Build BI dashboards for KPIs, trends and operational visibility.",
-    tech: ["Power BI", "DAX", "Data Modeling"],
-    highlights: [
-      "Star schema design for reporting",
-      "KPI dashboards and drilldowns",
-      "Stakeholder-ready layout and UX",
-    ],
-    link: "https://github.com/hernaninv",
-  },
-];
+const PrimaryButton =
+  "inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition";
+
+function ProjectCard({
+  title,
+  objective,
+  tags,
+  bullets,
+  href,
+}: {
+  title: string;
+  objective: string;
+  tags: string[];
+  bullets: string[];
+  href: string;
+}) {
+  return (
+    <div className="relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200/60">
+      {/* Button always top-right */}
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className={`${PrimaryButton} absolute right-6 top-6`}
+      >
+        View on GitHub →
+      </a>
+
+      <h2 className="pr-28 text-2xl font-semibold tracking-tight text-slate-900">
+        {title}
+      </h2>
+
+      <p className="mt-3 text-base text-slate-700">
+        <span className="font-semibold text-slate-900">Objective:</span>{" "}
+        {objective}
+      </p>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {tags.map((t) => (
+          <span
+            key={t}
+            className="rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-800 ring-1 ring-blue-100"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <ul className="mt-6 space-y-2 text-base text-slate-700">
+        {bullets.map((b) => (
+          <li key={b} className="flex gap-3">
+            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function PortfolioPage() {
   return (
-    <main className="space-y-10">
-      <header className="space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight">Portfolio</h1>
-        <p className="max-w-2xl text-gray-600">
+    <div className="space-y-8">
+      <header className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
+          Portfolio
+        </h1>
+        <p className="mt-3 max-w-3xl text-lg text-slate-700">
           Selected projects focused on BI, analytics and decision support. Each
           project includes objective, tech stack and highlights.
         </p>
       </header>
 
-      <section className="grid gap-6">
-        {projects.map((p) => (
-          <article
-            key={p.title}
-            className="rounded-3xl bg-white p-10 shadow-sm"
-          >
-            <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-              <div>
-                <h2 className="text-xl font-semibold">{p.title}</h2>
-                <p className="mt-3 text-gray-600">
-                  <span className="font-medium text-gray-800">Objective: </span>
-                  {p.objective}
-                </p>
-              </div>
+      <div className="grid gap-6">
+        <ProjectCard
+          title="SPY ROI ML Model"
+          objective="Analyze forward returns based on technical signals and evaluate predictive strength."
+          tags={["Python", "Pandas", "Scikit-learn"]}
+          bullets={[
+            "Feature engineering on historical market data",
+            "Evaluation across multiple horizons",
+            "Clear interpretation of results for decision-making",
+          ]}
+          href="https://github.com/hernaninv"
+        />
 
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm font-medium text-blue-600 hover:underline"
-              >
-                View on GitHub →
-              </a>
-            </div>
+        <ProjectCard
+          title="Telecom Churn ML"
+          objective="Predict churn and identify key drivers to support retention strategies."
+          tags={["Python", "Pandas", "Scikit-learn"]}
+          bullets={[
+            "EDA and data cleaning workflow",
+            "Model comparison using standard metrics",
+            "Insights on key churn drivers",
+          ]}
+          href="https://github.com/hernaninv"
+        />
 
-            <div className="mt-5 flex flex-wrap gap-2">
-              {p.tech.map((t) => (
-                <span
-                  key={t}
-                  className="rounded-full border border-gray-200 px-3 py-1 text-xs text-gray-600"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-
-            <ul className="mt-5 list-disc space-y-2 pl-5 text-sm text-gray-700">
-              {p.highlights.map((h) => (
-                <li key={h}>{h}</li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </section>
-    </main>
+        <ProjectCard
+          title="Happy Insurance BI"
+          objective="Build BI dashboards for KPIs, trends and operational visibility."
+          tags={["Power BI", "DAX", "Data Modeling"]}
+          bullets={[
+            "Star schema modeling and KPI drilldowns",
+            "Clean dashboard layout with narrative insights",
+            "Focus on stakeholder usability and clarity",
+          ]}
+          href="https://github.com/hernaninv"
+        />
+      </div>
+    </div>
   );
 }

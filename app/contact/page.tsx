@@ -1,57 +1,66 @@
+const PrimaryButton =
+  "inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition";
+
+function ContactCard({
+  title,
+  value,
+  href,
+}: {
+  title: string;
+  value: string;
+  href: string;
+}) {
+  return (
+    <div className="rounded-3xl bg-slate-50 p-7 ring-1 ring-slate-200">
+      <div className="text-lg font-semibold text-slate-900">{title}</div>
+      <div className="mt-3 text-base text-slate-700 break-words">{value}</div>
+
+      <div className="mt-5">
+        <a href={href} className={PrimaryButton} target="_blank" rel="noreferrer">
+          Open →
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function ContactPage() {
   return (
-    <main className="space-y-8">
-      <header className="space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight">Contact</h1>
-        <p className="max-w-2xl text-gray-600">
+    <div className="space-y-8">
+      <header className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
+          Contact
+        </h1>
+        <p className="mt-3 text-lg text-slate-700">
           If you’re hiring for BI / Data Analyst roles, I’d love to connect.
         </p>
       </header>
 
-      <section className="rounded-3xl bg-white p-10 shadow-sm space-y-6">
-        <div>
-          <h2 className="text-lg font-semibold">Email</h2>
-          <a
-            className="mt-2 inline-block text-blue-600 hover:underline"
+      <section className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+        {/* 2x2 grid to avoid overlap */}
+        <div className="grid gap-6 md:grid-cols-2">
+          <ContactCard
+            title="Email"
+            value="hernan.ar@alumni.technion.ac.il"
             href="mailto:hernan.ar@alumni.technion.ac.il"
-          >
-            hernan.ar@alumni.technion.ac.il
-          </a>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold">Phone</h2>
-          <a
-            className="mt-2 inline-block text-blue-600"
-          >
-            (+972) 054-203-6164
-          </a>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold">LinkedIn</h2>
-          <a
-            className="mt-2 inline-block text-blue-600 hover:underline"
+          />
+          <ContactCard
+            title="Phone"
+            value="(+972) 054-203-6164"
+            href="tel:+972542036164"
+          />
+          <ContactCard
+            title="LinkedIn"
+            value="linkedin.com/in/hernanaronson"
             href="https://www.linkedin.com/in/hernanaronson/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            linkedin.com/in/hernanaronson
-          </a>
-        </div>
-
-        <div>
-          <h2 className="text-lg font-semibold">GitHub</h2>
-          <a
-            className="mt-2 inline-block text-blue-600 hover:underline"
+          />
+          <ContactCard
+            title="GitHub"
+            value="github.com/hernaninv"
             href="https://github.com/hernaninv"
-            target="_blank"
-            rel="noreferrer"
-          >
-            github.com/hernaninv
-          </a>
+          />
         </div>
       </section>
-    </main>
+    </div>
   );
 }
