@@ -13,25 +13,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Hernan Aronson | BI & Data Analyst | SQL, Python, Power BI",
-  description:
-    "BI & Data Analyst specializing in SQL, Python and Power BI. Focused on transforming data into clear, actionable business insights.",
-  keywords: [
-    "BI Data Analyst",
-    "Data Analyst portfolio",
-    "SQL Power BI Analyst",
-    "Python Data Analysis",
-    "Hernan Aronson",
-  ],
-  openGraph: {
+export const metadata = {
   title: "Hernan Aronson | BI & Data Analyst",
   description:
     "BI & Data Analyst specializing in SQL, Python and Power BI. Turning data into clear, actionable business insights.",
-  url: "https://www.hernanaronson.com",
-  siteName: "Hernan Aronson Portfolio",
-  type: "website",
-},
+  authors: [{ name: "Hernan Aronson" }],
+  openGraph: {
+    title: "Hernan Aronson | BI & Data Analyst",
+    description:
+      "BI & Data Analyst specializing in SQL, Python and Power BI. Turning data into clear, actionable business insights.",
+    url: "https://www.hernanaronson.com",
+    siteName: "Hernan Aronson Portfolio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Hernan Aronson | BI & Data Analyst",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
