@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 
 const PrimaryButton =
   "inline-flex items-center justify-center rounded-xl bg-blue-900 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition";
@@ -7,34 +9,58 @@ export default function Home() {
   return (
     <div className="space-y-10">
       {/* Hero */}
-      <section className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
-        <h1 className="text-6xl font-semibold tracking-tight text-slate-900">
-          Hernan Aronson
-        </h1>
+        <section className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+          <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-center">
+            {/* Left: text */}
+            <div>
+              <h1 className="text-6xl font-semibold tracking-tight text-slate-900">
+                Hernan Aronson
+              </h1>
 
-        <div className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-blue-50 px-4 py-2 ring-1 ring-blue-100">
-          <span className="text-xl font-semibold text-blue-800">
-            BI & Data Analyst
-          </span>
-        </div>
+              <div className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-blue-50 px-4 py-2 ring-1 ring-blue-100">
+                <span className="text-xl font-semibold text-blue-800">
+                  BI & Data Analyst
+                </span>
+              </div>
 
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
-          Turning data into clear, actionable business insights using SQL, Python
-          and BI tools.
-        </p>
+              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
+                Turning data into clear, actionable business insights using SQL, Python
+                and BI tools.
+              </p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/portfolio" className={PrimaryButton}>
-            View Portfolio
-          </Link>
-          <Link href="/resume" className={PrimaryButton}>
-            Resume
-          </Link>
-          <Link href="/contact" className={PrimaryButton}>
-            Contact
-          </Link>
-        </div>
-      </section>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/portfolio" className={PrimaryButton}>
+                  View Portfolio
+                </Link>
+                <Link href="/resume" className={PrimaryButton}>
+                  Resume
+                </Link>
+                <Link href="/contact" className={PrimaryButton}>
+                  Contact
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: photo */}
+            <div className="lg:justify-self-end">
+              <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60 shadow-sm">
+                <Image
+                  src="/images/hernan.png"
+                  alt="Hernan Aronson"
+                  width={340}
+                  height={425}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
+
+              <p className="mt-3 text-sm text-slate-500">
+                BI &amp; Data Analyst • SQL • Python • Power BI
+              </p>
+            </div>
+          </div>
+        </section>
+
 
       {/* Skills */}
       <section className="grid gap-6 lg:grid-cols-3">
