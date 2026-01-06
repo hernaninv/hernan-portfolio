@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PrimaryButton =
   "inline-flex items-center justify-center rounded-xl bg-blue-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition";
 
@@ -62,13 +64,30 @@ export default function PortfolioPage() {
   return (
     <div className="space-y-8">
       <header className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
-        <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
-          Portfolio
-        </h1>
-        <p className="mt-3 max-w-3xl text-lg text-slate-700">
-          Selected projects focused on BI, analytics and decision support. Each
-          project includes objective, tech stack and highlights.
-        </p>
+        <div className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
+          {/* Texto */}
+          <div>
+            <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
+              Portfolio
+            </h1>
+            <p className="mt-3 max-w-3xl text-lg text-slate-700">
+              Selected projects focused on BI, analytics and decision support. Each
+              project includes objective, tech stack and highlights.
+            </p>
+          </div>
+
+          {/* Imagen */}
+          <div className="relative overflow-hidden rounded-2xl ring-1 ring-slate-200/60">
+            <Image
+              src="/images/portfolio/portfolio-hero.png"
+              alt="Analytics dashboards and charts illustration"
+              width={720}
+              height={420}
+              className="h-auto w-full"
+              priority
+            />
+          </div>
+        </div>
       </header>
 
       <div className="grid gap-6">
