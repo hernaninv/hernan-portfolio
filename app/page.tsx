@@ -45,7 +45,7 @@ export default function Home() {
             <div className="lg:justify-self-end">
               <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60 shadow-sm">
                 <Image
-                  src="/images/hernan.png"
+                  src="/images/hernan060126.png"
                   alt="Hernan Aronson"
                   width={340}
                   height={425}
