@@ -118,7 +118,7 @@ export default function RootLayout({
 
           {/* Main content */}
           <main className="flex-1 lg:ml-72">
-            <div className="min-h-screen bg-gradient-to-b from-slate-200/70 to-slate-100">
+            <div className="min-h-screen bg-white">
               <div className="mx-auto max-w-6xl px-6 py-10 lg:py-12">
                 {children}
               </div>

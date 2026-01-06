@@ -16,7 +16,7 @@ function ContactCard({
     href.startsWith("http://") || href.startsWith("https://");
 
   return (
-    <div className="rounded-3xl bg-slate-50 p-7 ring-1 ring-slate-200">
+    <div className="rounded-3xl bg-slate-50 p-7 ring-1 ring-slate-200 shadow-card shadow-card-hover">
       <div className="text-lg font-semibold text-slate-900">{title}</div>
       <div className="mt-3 text-base text-slate-700 break-words">{value}</div>
 
@@ -38,7 +38,7 @@ function ContactCard({
 export default function ContactPage() {
   return (
     <div className="space-y-8">
-      <header className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+      <header className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
           Contact
         </h1>
@@ -47,7 +47,7 @@ export default function ContactPage() {
         </p>
       </header>
 
-      <section className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+      <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         {/* 2x2 grid to avoid overlap */}
         <div className="grid gap-6 md:grid-cols-2">
           <ContactCard

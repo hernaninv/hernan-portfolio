@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="space-y-10">
       {/* Hero */}
-        <section className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+        <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
           <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-center">
             {/* Left: text */}
             <div>
@@ -43,7 +43,7 @@ export default function Home() {
 
             {/* Right: photo */}
             <div className="lg:justify-self-end">
-              <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60 shadow-sm">
+              <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60 shadow-card">
                 <Image
                   src="/images/hernan060126.png"
                   alt="Hernan Aronson"
@@ -64,7 +64,7 @@ export default function Home() {
 
       {/* Skills */}
       <section className="grid gap-6 lg:grid-cols-3">
-        <div className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-200/60">
+        <div className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
           <h3 className="text-xl font-semibold text-slate-900">SQL & Analytics</h3>
           <p className="mt-3 text-base leading-relaxed text-slate-700">
             Data querying, joins, aggregations and KPI-focused analysis to support
@@ -72,7 +72,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-200/60">
+        <div className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
           <h3 className="text-xl font-semibold text-slate-900">BI & Dashboards</h3>
           <p className="mt-3 text-base leading-relaxed text-slate-700">
             Power BI dashboards with clear storytelling, clean data models and
@@ -80,7 +80,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="rounded-3xl bg-white p-7 shadow-sm ring-1 ring-slate-200/60">
+        <div className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
           <h3 className="text-xl font-semibold text-slate-900">Python for Data</h3>
           <p className="mt-3 text-base leading-relaxed text-slate-700">
             Exploratory data analysis, feature engineering and practical analytics
@@ -90,7 +90,7 @@ export default function Home() {
       </section>
 
       {/* Featured */}
-      <section className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+      <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className="text-3xl font-semibold tracking-tight text-slate-900">
@@ -107,21 +107,21 @@ export default function Home() {
         </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover">
             <h3 className="text-xl font-semibold text-slate-900">SPY ROI ML Model</h3>
             <p className="mt-3 text-base text-slate-700">
               Forward-return analysis using engineered signals and model evaluation.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover">
             <h3 className="text-xl font-semibold text-slate-900">Telecom Churn ML</h3>
             <p className="mt-3 text-base text-slate-700">
               Churn prediction with insights on key drivers for retention strategy.
             </p>
           </div>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7">
+          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover">
             <h3 className="text-xl font-semibold text-slate-900">Happy Insurance BI</h3>
             <p className="mt-3 text-base text-slate-700">
               Power BI dashboards with star schema modeling and KPI drilldowns.

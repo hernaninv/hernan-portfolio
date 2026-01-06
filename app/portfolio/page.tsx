@@ -17,7 +17,7 @@ function ProjectCard({
   href: string;
 }) {
   return (
-    <div className="relative rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200/60">
+    <div className="relative rounded-3xl bg-white p-8 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
       {/* Button always top-right */}
       <a
         href={href}
@@ -63,7 +63,7 @@ function ProjectCard({
 export default function PortfolioPage() {
   return (
     <div className="space-y-8">
-      <header className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+      <header className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <div className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           {/* Texto */}
           <div>
@@ -77,7 +77,7 @@ export default function PortfolioPage() {
           </div>
 
           {/* Imagen */}
-          <div className="relative overflow-hidden rounded-2xl ring-1 ring-slate-200/60">
+          <div className="relative overflow-hidden rounded-2xl ring-1 ring-slate-200/60 shadow-card">
             <Image
               src="/images/portfolio/portfolio-hero.png"
               alt="Analytics dashboards and charts illustration"
