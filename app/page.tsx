@@ -106,28 +106,52 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover">
-            <h3 className="text-xl font-semibold text-slate-900">SPY ROI ML Model</h3>
-            <p className="mt-3 text-base text-slate-700">
-              Forward-return analysis using engineered signals and model evaluation.
-            </p>
-          </div>
+        <div className="mt-8 flex justify-center">
+          <div className="mt-8 grid w-full auto-rows-fr gap-6 md:grid-cols-2">
+            <Link
+              href="/portfolio"
+              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
+            >
+              <h3 className="text-xl font-semibold text-slate-900">SPY ROI ML Model</h3>
+              <p className="mt-3 text-base text-slate-700">
+                Forward-return analysis using engineered signals and model evaluation.
+              </p>
+            </Link>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover">
-            <h3 className="text-xl font-semibold text-slate-900">Telecom Churn ML</h3>
-            <p className="mt-3 text-base text-slate-700">
-              Churn prediction with insights on key drivers for retention strategy.
-            </p>
-          </div>
+            <Link
+              href="/portfolio"
+              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
+            >
+              <h3 className="text-xl font-semibold text-slate-900">
+                Dynamic Pricing &amp; Quoting Tool (Excel + VBA)
+              </h3>
+              <p className="mt-3 text-base text-slate-700">
+                BOM-driven costing + bundles + guardrails + PDF/Excel export for a furniture manufacturer.
+              </p>
+            </Link>
 
-          <div className="rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover">
-            <h3 className="text-xl font-semibold text-slate-900">Happy Insurance BI</h3>
-            <p className="mt-3 text-base text-slate-700">
-              Power BI dashboards with star schema modeling and KPI drilldowns.
-            </p>
+            <Link
+              href="/portfolio"
+              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
+            >
+              <h3 className="text-xl font-semibold text-slate-900">Telecom Churn ML</h3>
+              <p className="mt-3 text-base text-slate-700">
+                Churn prediction with insights on key drivers for retention strategy.
+              </p>
+            </Link>
+
+            <Link
+              href="/portfolio"
+              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
+            >
+              <h3 className="text-xl font-semibold text-slate-900">Happy Insurance BI</h3>
+              <p className="mt-3 text-base text-slate-700">
+                Power BI dashboards with star schema modeling and KPI drilldowns.
+              </p>
+            </Link>
           </div>
         </div>
+
       </section>
     </div>
   );

@@ -104,6 +104,19 @@ export default function PortfolioPage() {
         />
 
         <ProjectCard
+          title="Dynamic Pricing & Quoting Tool (Excel + VBA)"
+          objective="BOM-driven costing + bundles + guardrails + PDF/Excel export for a furniture manufacturer."
+          tags={["Advanced Excel", "VBA Code", "Power Query", "Macros"]}
+          bullets={[
+            "Designed a relational model: Parts → Products (BOM) → Bundles → Price List",
+            "Built quote workflow with validations (no decimals, no zero-price, no empty bundles)",
+            "Implemented UI hierarchy (top-level vs child lines) to prevent pricing confusion",
+            "Exported print-ready PDF (1 page wide) + clean Excel (.xlsx values-only)",
+          ]}
+          href="https://github.com/hernaninv/REPLACE_WITH_YOUR_REPO_LINK"
+        />
+
+        <ProjectCard
           title="Telecom Churn ML"
           objective="Predict churn and identify key drivers to support retention strategies."
           tags={["Python", "Pandas", "Scikit-learn"]}

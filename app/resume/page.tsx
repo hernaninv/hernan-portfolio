@@ -4,7 +4,7 @@ const PrimaryButton =
 export default function ResumePage() {
   return (
     <div className="space-y-8">
-      <header className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+      <header className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
           Resume
         </h1>
@@ -13,7 +13,7 @@ export default function ResumePage() {
         </p>
       </header>
 
-      <section className="rounded-3xl bg-white p-10 shadow-sm ring-1 ring-slate-200/60">
+      <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h2 className="text-2xl font-semibold text-slate-900">Profile</h2>
         <p className="mt-3 text-lg leading-relaxed text-slate-700">
           BI & Data Analyst with a strong analytical background, focused on
