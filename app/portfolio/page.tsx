@@ -113,7 +113,7 @@ export default function PortfolioPage() {
             "Implemented UI hierarchy (top-level vs child lines) to prevent pricing confusion",
             "Exported print-ready PDF (1 page wide) + clean Excel (.xlsx values-only)",
           ]}
-          href="https://github.com/hernaninv/REPLACE_WITH_YOUR_REPO_LINK"
+          href="https://github.com/hernaninv/Furniture_Project"
         />
 
         <ProjectCard
