@@ -9,13 +9,16 @@ function ProjectCard({
   tags,
   bullets,
   href,
+  image,
 }: {
   title: string;
   objective: string;
   tags: string[];
   bullets: string[];
   href: string;
+  image: string;
 }) {
+
   return (
     <div className="relative rounded-3xl bg-white p-8 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
       {/* Button always top-right */}
@@ -48,14 +51,26 @@ function ProjectCard({
         ))}
       </div>
 
-      <ul className="mt-6 space-y-2 text-base text-slate-700">
-        {bullets.map((b) => (
-          <li key={b} className="flex gap-3">
-            <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-900" />
-            <span>{b}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_320px] lg:items-start">
+        {/* Bullets */}
+        <ul className="space-y-2 text-base text-slate-700">
+          {bullets.map((b) => (
+            <li key={b} className="flex gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-900" />
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* Imagen */}
+        <div className="overflow-hidden rounded-2xl ring-1 ring-slate-200 aspect-video">
+          <img
+            src={image}
+            alt={`${title} preview`}
+            className="h-full w-full object-cover"
+          />
+        </div>
+      </div>
     </div>
   );
 }
@@ -100,6 +115,7 @@ export default function PortfolioPage() {
             "Evaluation across multiple horizons",
             "Clear interpretation of results for decision-making",
           ]}
+          image="/images/projects/spy-roi.png"
           href="https://github.com/hernaninv/SPY-ROI-120d-ML-Model"
         />
 
@@ -113,6 +129,7 @@ export default function PortfolioPage() {
             "Implemented UI hierarchy (top-level vs child lines) to prevent pricing confusion",
             "Exported print-ready PDF (1 page wide) + clean Excel (.xlsx values-only)",
           ]}
+          image="/images/projects/dynamic-pricing.png"
           href="https://github.com/hernaninv/Furniture_Project"
         />
 
@@ -125,6 +142,7 @@ export default function PortfolioPage() {
             "Model comparison using standard metrics",
             "Insights on key churn drivers",
           ]}
+          image="/images/projects/telecom-churn.png"
           href="https://github.com/hernaninv/TelecomChurn-ML-Project"
         />
 
@@ -137,6 +155,7 @@ export default function PortfolioPage() {
             "Clean dashboard layout with narrative insights",
             "Focus on stakeholder usability and clarity",
           ]}
+          image="/images/projects/happy-insurance.png"
           href="https://github.com/hernaninv/HappyInsurance-BI-Project"
         />
       </div>

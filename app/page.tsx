@@ -112,10 +112,21 @@ export default function Home() {
               href="/portfolio"
               className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
             >
-              <h3 className="text-xl font-semibold text-slate-900">SPY ROI ML Model</h3>
+              <h3 className="text-xl font-semibold text-slate-900">
+                SPY ROI ML Model
+              </h3>
+
               <p className="mt-3 text-base text-slate-700">
                 Forward-return analysis using engineered signals and model evaluation.
               </p>
+
+              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
+                <img
+                  src="/images/projects/spy-roi.png"
+                  alt="SPY ROI ML Model preview"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </Link>
 
             <Link
@@ -128,6 +139,14 @@ export default function Home() {
               <p className="mt-3 text-base text-slate-700">
                 BOM-driven costing + bundles + guardrails + PDF/Excel export for a furniture manufacturer.
               </p>
+              
+              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
+                <img
+                  src="/images/projects/dynamic-pricing.png"
+                  alt="Dynamic Pricing & Quoting Tool preview"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </Link>
 
             <Link
@@ -138,6 +157,14 @@ export default function Home() {
               <p className="mt-3 text-base text-slate-700">
                 Churn prediction with insights on key drivers for retention strategy.
               </p>
+              
+              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
+                <img
+                  src="/images/projects/telecom-churn.png"
+                  alt="Telecom Churn ML preview"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </Link>
 
             <Link
@@ -148,6 +175,14 @@ export default function Home() {
               <p className="mt-3 text-base text-slate-700">
                 Power BI dashboards with star schema modeling and KPI drilldowns.
               </p>
+                            
+              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
+                <img
+                  src="/images/projects/happy-insurance.png"
+                  alt="Happy Insurance BI preview"
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </Link>
           </div>
         </div>
