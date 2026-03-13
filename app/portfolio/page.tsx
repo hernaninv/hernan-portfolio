@@ -1,7 +1,6 @@
 import Image from "next/image";
-
-const PrimaryButton =
-  "inline-flex items-center justify-center rounded-xl bg-blue-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition";
+import { PrimaryButtonSm } from "@/lib/ui";
+import BackToTop from "@/components/back-to-top";
 
 function ProjectCard({
   title,
@@ -18,20 +17,9 @@ function ProjectCard({
   href: string;
   image: string;
 }) {
-
   return (
-    <div className="relative rounded-3xl bg-white p-8 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
-      {/* Button always top-right */}
-      <a
-        href={href}
-        target="_blank"
-        rel="noreferrer"
-        className={`${PrimaryButton} absolute right-6 top-6`}
-      >
-        View on GitHub →
-      </a>
-
-      <h2 className="pr-28 text-2xl font-semibold tracking-tight text-slate-900">
+    <div className="rounded-3xl bg-white p-8 ring-1 ring-slate-200/60 shadow-card shadow-card-hover transition-transform hover:scale-[1.01]">
+      <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
         {title}
       </h2>
 
@@ -44,7 +32,7 @@ function ProjectCard({
         {tags.map((t) => (
           <span
             key={t}
-            className="rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-800 ring-1 ring-blue-100"
+            className="rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-600 ring-1 ring-blue-200"
           >
             {t}
           </span>
@@ -56,20 +44,32 @@ function ProjectCard({
         <ul className="space-y-2 text-base text-slate-700">
           {bullets.map((b) => (
             <li key={b} className="flex gap-3">
-              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-900" />
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-500" />
               <span>{b}</span>
             </li>
           ))}
         </ul>
 
-        {/* Imagen */}
-        <div className="overflow-hidden rounded-2xl ring-1 ring-slate-200 aspect-video">
-          <img
+        {/* Image */}
+        <div className="relative overflow-hidden rounded-2xl ring-1 ring-slate-200 aspect-video">
+          <Image
             src={image}
             alt={`${title} preview`}
-            className="h-full w-full object-cover"
+            fill
+            className="object-cover"
           />
         </div>
+      </div>
+
+      <div className="mt-6">
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className={PrimaryButtonSm}
+        >
+          View on GitHub →
+        </a>
       </div>
     </div>
   );
@@ -159,6 +159,7 @@ export default function PortfolioPage() {
           href="https://github.com/hernaninv/HappyInsurance-BI-Project"
         />
       </div>
+      <BackToTop />
     </div>
   );
 }

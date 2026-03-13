@@ -1,5 +1,6 @@
-const PrimaryButton =
-  "inline-flex items-center justify-center rounded-xl bg-blue-900 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 transition";
+import { PrimaryButtonSm as PrimaryButton } from "@/lib/ui";
+import ContactForm from "@/components/contact-form";
+import BackToTop from "@/components/back-to-top";
 
 function ContactCard({
   title,
@@ -43,7 +44,7 @@ export default function ContactPage() {
           Contact
         </h1>
         <p className="mt-3 text-lg text-slate-700">
-          If you’re hiring for BI / Data Analyst roles, I’d love to connect.
+          Feel free to reach out — whether it's about a project, a collaboration, or just to connect.
         </p>
       </header>
 
@@ -58,27 +59,16 @@ export default function ContactPage() {
           />
 
           <ContactCard
-            title="Phone"
-            value="(+972) 054-203-6164"
-            href="tel:+972542036164"
-            buttonLabel="Call"
-          />
-
-          <ContactCard
             title="LinkedIn"
             value="linkedin.com/in/hernanaronson"
             href="https://www.linkedin.com/in/hernanaronson/"
             buttonLabel="Open"
           />
-
-          <ContactCard
-            title="GitHub"
-            value="github.com/hernaninv"
-            href="https://github.com/hernaninv"
-            buttonLabel="Open"
-          />
         </div>
       </section>
+
+      <ContactForm />
+      <BackToTop />
     </div>
   );
 }

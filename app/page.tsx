@@ -1,92 +1,127 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Database, BarChart3, Code2, MapPin } from "lucide-react";
+import { PrimaryButton, SecondaryButton } from "@/lib/ui";
+import BackToTop from "@/components/back-to-top";
 
-
-const PrimaryButton =
-  "inline-flex items-center justify-center rounded-xl bg-blue-900 px-5 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-800 transition";
+const projects = [
+  {
+    title: "SPY ROI ML Model",
+    description: "Forward-return analysis using engineered signals and model evaluation.",
+    image: "/images/projects/spy-roi.png",
+    href: "https://github.com/hernaninv/SPY-ROI-120d-ML-Model",
+  },
+  {
+    title: "Dynamic Pricing & Quoting Tool (Excel + VBA)",
+    description: "BOM-driven costing + bundles + guardrails + PDF/Excel export for a furniture manufacturer.",
+    image: "/images/projects/dynamic-pricing.png",
+    href: "https://github.com/hernaninv/Furniture_Project",
+  },
+  {
+    title: "Telecom Churn ML",
+    description: "Churn prediction with insights on key drivers for retention strategy.",
+    image: "/images/projects/telecom-churn.png",
+    href: "https://github.com/hernaninv/TelecomChurn-ML-Project",
+  },
+  {
+    title: "Happy Insurance BI",
+    description: "Power BI dashboards with star schema modeling and KPI drilldowns.",
+    image: "/images/projects/happy-insurance.png",
+    href: "https://github.com/hernaninv/HappyInsurance-BI-Project",
+  },
+];
 
 export default function Home() {
   return (
     <div className="space-y-10">
       {/* Hero */}
-        <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
-          <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-center">
-            {/* Left: text */}
-            <div>
-              <h1 className="text-6xl font-semibold tracking-tight text-slate-900">
-                Hernan Aronson
-              </h1>
+      <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
+        <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-center">
+          {/* Left: text */}
+          <div>
+            <h1 className="text-6xl font-semibold tracking-tight text-slate-900">
+              Hernan Aronson
+            </h1>
 
-              <div className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-blue-50 px-4 py-2 ring-1 ring-blue-100">
-                <span className="text-xl font-semibold text-blue-800">
-                  BI & Data Analyst
-                </span>
-              </div>
-
-              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
-                Turning data into clear, actionable business insights using SQL, Python
-                and BI tools.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/portfolio" className={PrimaryButton}>
-                  View Portfolio
-                </Link>
-                <Link href="/resume" className={PrimaryButton}>
-                  Resume
-                </Link>
-                <Link href="/contact" className={PrimaryButton}>
-                  Contact
-                </Link>
-              </div>
+            <div className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-blue-50 px-4 py-2 ring-1 ring-blue-200">
+              <span className="text-xl font-semibold text-blue-600">
+                AI-driven Business & Financial Data Analyst
+              </span>
             </div>
 
-            {/* Right: photo */}
-            <div className="lg:justify-self-end">
-              <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60 shadow-card">
-                <Image
-                  src="/images/hernan060126.png"
-                  alt="Hernan Aronson"
-                  width={340}
-                  height={425}
-                  className="h-auto w-full object-cover"
-                  priority
-                />
-              </div>
+            <div className="mt-3 flex items-center gap-1.5 text-sm text-slate-500">
+              <MapPin size={14} />
+              <span>Hod Hasharon, Israel</span>
+            </div>
 
-              <p className="mt-3 text-sm text-slate-500">
-                BI &amp; Data Analyst • SQL • Python • Power BI
-              </p>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
+              Turning data into clear, actionable business insights using SQL, Excel, Python and BI tools.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/portfolio" className={PrimaryButton}>
+                View Portfolio
+              </Link>
+              <Link href="/resume" className={SecondaryButton}>
+                Resume
+              </Link>
+              <Link href="/contact" className={SecondaryButton}>
+                Contact
+              </Link>
             </div>
           </div>
-        </section>
 
+          {/* Right: photo */}
+          <div className="lg:justify-self-end">
+            <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60 shadow-card">
+              <Image
+                src="/images/hernan060126.png"
+                alt="Hernan Aronson"
+                width={340}
+                height={425}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* Skills */}
       <section className="grid gap-6 lg:grid-cols-3">
-        <div className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
-          <h3 className="text-xl font-semibold text-slate-900">SQL & Analytics</h3>
+        <Link href="/portfolio" className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover transition-transform hover:scale-[1.01]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 ring-1 ring-blue-200">
+            <Database size={20} className="text-blue-600" />
+          </div>
+          <h3 className="mt-4 text-xl font-semibold text-slate-900">SQL & Analytics</h3>
           <p className="mt-3 text-base leading-relaxed text-slate-700">
             Data querying, joins, aggregations and KPI-focused analysis to support
             business decisions.
           </p>
-        </div>
+        </Link>
 
-        <div className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
-          <h3 className="text-xl font-semibold text-slate-900">BI & Dashboards</h3>
+        <Link href="/portfolio" className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover transition-transform hover:scale-[1.01]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 ring-1 ring-blue-200">
+            <BarChart3 size={20} className="text-blue-600" />
+          </div>
+          <h3 className="mt-4 text-xl font-semibold text-slate-900">BI & Dashboards</h3>
           <p className="mt-3 text-base leading-relaxed text-slate-700">
             Power BI dashboards with clear storytelling, clean data models and
             stakeholder-ready insights.
           </p>
-        </div>
+        </Link>
 
-        <div className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover">
-          <h3 className="text-xl font-semibold text-slate-900">Python for Data</h3>
+        <Link href="/portfolio" className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover transition-transform hover:scale-[1.01]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 ring-1 ring-blue-200">
+            <Code2 size={20} className="text-blue-600" />
+          </div>
+          <h3 className="mt-4 text-xl font-semibold text-slate-900">Python for Data</h3>
           <p className="mt-3 text-base leading-relaxed text-slate-700">
             Exploratory data analysis, feature engineering and practical analytics
             workflows.
           </p>
-        </div>
+        </Link>
       </section>
 
       {/* Featured */}
@@ -106,88 +141,30 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <div className="mt-8 grid w-full auto-rows-fr gap-6 md:grid-cols-2">
-            <Link
-              href="/portfolio"
-              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
+        <div className="mt-8 grid w-full auto-rows-fr gap-6 md:grid-cols-2">
+          {projects.map((p) => (
+            <a
+              key={p.href}
+              href={p.href}
+              target="_blank"
+              rel="noreferrer"
+              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover transition-transform hover:scale-[1.01] focus:outline-none focus:ring-2 focus:ring-blue-300"
             >
-              <h3 className="text-xl font-semibold text-slate-900">
-                SPY ROI ML Model
-              </h3>
-
-              <p className="mt-3 text-base text-slate-700">
-                Forward-return analysis using engineered signals and model evaluation.
-              </p>
-
-              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
-                <img
-                  src="/images/projects/spy-roi.png"
-                  alt="SPY ROI ML Model preview"
-                  className="h-full w-full object-cover"
+              <h3 className="text-xl font-semibold text-slate-900">{p.title}</h3>
+              <p className="mt-3 text-base text-slate-700">{p.description}</p>
+              <div className="relative mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
+                <Image
+                  src={p.image}
+                  alt={`${p.title} preview`}
+                  fill
+                  className="object-cover"
                 />
               </div>
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
-            >
-              <h3 className="text-xl font-semibold text-slate-900">
-                Dynamic Pricing &amp; Quoting Tool (Excel + VBA)
-              </h3>
-              <p className="mt-3 text-base text-slate-700">
-                BOM-driven costing + bundles + guardrails + PDF/Excel export for a furniture manufacturer.
-              </p>
-              
-              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
-                <img
-                  src="/images/projects/dynamic-pricing.png"
-                  alt="Dynamic Pricing & Quoting Tool preview"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
-            >
-              <h3 className="text-xl font-semibold text-slate-900">Telecom Churn ML</h3>
-              <p className="mt-3 text-base text-slate-700">
-                Churn prediction with insights on key drivers for retention strategy.
-              </p>
-              
-              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
-                <img
-                  src="/images/projects/telecom-churn.png"
-                  alt="Telecom Churn ML preview"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Link>
-
-            <Link
-              href="/portfolio"
-              className="flex h-full flex-col rounded-3xl border border-slate-200 bg-slate-50 p-7 shadow-card shadow-card-hover focus:outline-none focus:ring-2 focus:ring-blue-300"
-            >
-              <h3 className="text-xl font-semibold text-slate-900">Happy Insurance BI</h3>
-              <p className="mt-3 text-base text-slate-700">
-                Power BI dashboards with star schema modeling and KPI drilldowns.
-              </p>
-                            
-              <div className="mt-5 overflow-hidden rounded-xl ring-1 ring-slate-200 aspect-video">
-                <img
-                  src="/images/projects/happy-insurance.png"
-                  alt="Happy Insurance BI preview"
-                  className="h-full w-full object-cover"
-                />
-              </div>
-            </Link>
-          </div>
+            </a>
+          ))}
         </div>
-
       </section>
+      <BackToTop />
     </div>
   );
 }

@@ -1,20 +1,25 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
+import Sidebar from "@/components/sidebar";
+import MobileNav from "@/components/mobile-nav";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Hernan Aronson | BI & Data Analyst",
+  metadataBase: new URL("https://www.hernanaronson.com"),
+  title: "Hernan Aronson | AI-driven Business & Financial Data Analyst",
   description:
-    "Turning data into clear, actionable business insights using SQL, Python and BI tools.",
+    "Turning data into clear, actionable business insights using SQL, Excel, Python and BI tools.",
   openGraph: {
-    title: "Hernan Aronson | BI & Data Analyst",
+    title: "Hernan Aronson | AI-driven Business & Financial Data Analyst",
     description:
-      "Turning data into clear, actionable business insights using SQL, Python and BI tools.",
+      "Turning data into clear, actionable business insights using SQL, Excel, Python and BI tools.",
     url: "https://www.hernanaronson.com/",
     siteName: "Hernan Aronson Portfolio",
     images: [
       {
-        url: "/og-image.png", // 👈 va a public/og-image.png
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Hernan Aronson – BI & Data Analyst",
@@ -25,96 +30,24 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hernan Aronson | BI & Data Analyst",
+    title: "Hernan Aronson | AI-driven Business & Financial Data Analyst",
     description:
-      "Turning data into clear, actionable business insights using SQL, Python and BI tools.",
+      "Turning data into clear, actionable business insights using SQL, Excel, Python and BI tools.",
     images: ["/og-image.png"],
   },
 };
 
-const navItemClass =
-  "block rounded-xl px-4 py-3 text-base font-medium text-slate-200 hover:bg-white/10 hover:text-white transition";
-
-const navItemActiveClass =
-  "bg-white/15 text-white shadow-[inset_0_0_0_1px_rgba(255,255,255,0.12)]";
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  // Nota: sin “active route” para mantenerlo simple (y evitar bugs).
-  // Si querés que marque el activo, lo hacemos con usePathname en un Client Component.
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body className="min-h-screen bg-slate-100 text-slate-900">
+        <MobileNav />
+
         <div className="min-h-screen lg:flex">
-          {/* Sidebar */}
-          <aside className="lg:fixed lg:inset-y-0 lg:left-0 lg:w-72 bg-gradient-to-b from-slate-900 to-blue-950 text-white">
-            <div className="flex h-full flex-col px-6 py-8">
-              <div className="space-y-2">
-                <Link href="/" className="inline-flex items-center gap-3">
-                  <img
-                    src="/brand/logo-mark.svg"
-                    alt="Hernan Aronson logo"
-                    className="h-10 w-10 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)]"
-                  />
-                  <div>
-                    <div className="text-2xl font-semibold tracking-tight">
-                      Hernan Aronson
-                    </div>
-                    <div className="text-sm font-medium text-slate-200/90">
-                      BI & Data Analyst
-                    </div>
-                  </div>
-                </Link>
-              </div>
-
-              <nav className="mt-10 space-y-2">
-                <Link href="/" className={navItemClass}>
-                  Home
-                </Link>
-                <Link href="/portfolio" className={navItemClass}>
-                  Portfolio
-                </Link>
-                <Link href="/resume" className={navItemClass}>
-                  Resume
-                </Link>
-                <Link href="/contact" className={navItemClass}>
-                  Contact
-                </Link>
-              </nav>
-
-              <div className="mt-auto pt-10 text-sm text-slate-200/85">
-                <div className="font-semibold">Contact</div>
-                <div className="mt-2 space-y-1">
-                  <a
-                    className="block truncate hover:underline"
-                    href="mailto:hernan.ar@alumni.technion.ac.il"
-                  >
-                    hernan.ar@alumni.technion.ac.il
-                  </a>
-                  <a className="block truncate hover:underline" href="tel:+972542036164">
-                    (+972) 054-203-6164
-                  </a>
-                  <a
-                    className="block truncate hover:underline"
-                    href="https://www.linkedin.com/in/hernanaronson/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    linkedin.com/in/hernanaronson
-                  </a>
-                  <a
-                    className="block truncate hover:underline"
-                    href="https://github.com/hernaninv"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    github.com/hernaninv
-                  </a>
-                </div>
-              </div>
-            </div>
-          </aside>
+          {/* Desktop sidebar */}
+          <Sidebar />
 
           {/* Main content */}
           <main className="flex-1 lg:ml-72">
@@ -123,6 +56,29 @@ export default function RootLayout({
                 {children}
               </div>
             </div>
+            <footer className="border-t border-slate-200 bg-slate-50 px-6 py-5">
+              <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row">
+                <span className="text-sm text-slate-500">© 2026 Hernan Aronson. All rights reserved.</span>
+                <div className="flex items-center gap-4">
+                  <a
+                    href="https://www.linkedin.com/in/hernanaronson/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-slate-500 hover:text-blue-600 transition"
+                  >
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://github.com/hernaninv"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-slate-500 hover:text-blue-600 transition"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </footer>
           </main>
         </div>
       </body>
