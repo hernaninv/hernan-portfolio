@@ -42,3 +42,12 @@ next-env.d.ts
 
 .vercel
 .env*.local
+
+# Claude Code / Superpowers internal files
+.agents/
+.claude/
+skills-lock.json
+docs/
+
+# Misc
+xonix.html
