@@ -1,17 +1,16 @@
 import Image from "next/image";
-import BackToTop from "@/components/back-to-top";
 
 const games = [
   {
     title: "Tetris",
     description: "Classic Tetris rebuilt from scratch using AI — fully playable in the browser.",
-    image: "/SSTetris.png",
+    image: "/images/games/SSTetris.png",
     href: "/tetris.html",
   },
   {
     title: "Xonix",
     description: "Classic Xonix territory capture game rebuilt using AI — claim the board without getting caught.",
-    image: "/SSXonix.png",
+    image: "/images/games/SSXonix.png",
     href: "/xonix.html",
   },
 ];
@@ -55,7 +54,6 @@ export default function GamesPage() {
           ))}
         </div>
       </section>
-      <BackToTop />
     </div>
   );
 }

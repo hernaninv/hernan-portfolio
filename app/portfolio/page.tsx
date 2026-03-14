@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { PrimaryButtonSm } from "@/lib/ui";
-import BackToTop from "@/components/back-to-top";
 
 function ProjectCard({
   title,
@@ -159,7 +158,6 @@ export default function PortfolioPage() {
           href="https://github.com/hernaninv/HappyInsurance-BI-Project"
         />
       </div>
-      <BackToTop />
     </div>
   );
 }

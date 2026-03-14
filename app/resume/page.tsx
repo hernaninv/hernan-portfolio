@@ -1,5 +1,4 @@
 import { PrimaryButton } from "@/lib/ui";
-import BackToTop from "@/components/back-to-top";
 
 const experience = [
   {
@@ -180,7 +179,6 @@ export default function ResumePage() {
           </div>
         </section>
       </div>
-      <BackToTop />
     </div>
   );
 }

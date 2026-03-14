@@ -1,6 +1,5 @@
-import { PrimaryButtonSm as PrimaryButton } from "@/lib/ui";
+import { PrimaryButtonSm } from "@/lib/ui";
 import ContactForm from "@/components/contact-form";
-import BackToTop from "@/components/back-to-top";
 
 function ContactCard({
   title,
@@ -24,7 +23,7 @@ function ContactCard({
       <div className="mt-5">
         <a
           href={href}
-          className={PrimaryButton}
+          className={PrimaryButtonSm}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noreferrer" : undefined}
         >
@@ -68,7 +67,6 @@ export default function ContactPage() {
       </section>
 
       <ContactForm />
-      <BackToTop />
     </div>
   );
 }

@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Database, BarChart3, Code2, MapPin } from "lucide-react";
 import { PrimaryButton, SecondaryButton } from "@/lib/ui";
-import BackToTop from "@/components/back-to-top";
 
 const projects = [
   {
@@ -164,7 +163,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <BackToTop />
     </div>
   );
 }

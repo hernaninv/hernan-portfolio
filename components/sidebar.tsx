@@ -25,8 +25,8 @@ export default function Sidebar() {
             className="h-10 w-10 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)]"
           />
           <div>
-            <div className="text-2xl font-semibold tracking-tight">Hernan Aronson</div>
-            <div className="mt-1 text-lg text-slate-200">AI-driven Data Analyst</div>
+            <div className="text-xl font-semibold tracking-tight">Hernan Aronson</div>
+            <div className="mt-1 text-sm text-slate-200">AI-driven Data Analyst</div>
           </div>
         </Link>
       </div>
