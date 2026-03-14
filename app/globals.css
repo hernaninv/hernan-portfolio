@@ -15,8 +15,18 @@
 .shadow-card-hover:hover {
   box-shadow:
     0 4px 12px rgba(15, 23, 42, 0.08),
-    0 12px 28px rgba(15, 23, 42, 0.12);
+    0 12px 28px rgba(15, 23, 42, 0.12),
+    0 0 0 2px rgb(147 197 253);
   transform: translateY(-1px);
+}
+
+/* === Card image zoom on hover === */
+.shadow-card-hover img {
+  transition: transform 400ms ease;
+}
+
+.shadow-card-hover:hover img {
+  transform: scale(1.05);
 }
 
 /* === Typing animation cursor === */
