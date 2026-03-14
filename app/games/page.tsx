@@ -23,7 +23,7 @@ export default function GamesPage() {
           Games
         </h1>
         <p className="mt-3 text-lg text-slate-700">
-          These games were built entirely through conversational AI development — no manual coding. Using <strong>Claude Code</strong>, I described each game&apos;s mechanics, iteratively refined the gameplay, and debugged edge cases — all in plain English. The result: two fully playable browser games, written from scratch without touching a line of code myself.
+          These games were built entirely through conversational AI development — no manual coding. Using <strong>Claude Code</strong>, I described each game&apos;s mechanics, iteratively refined the gameplay, and debugged edge cases — all in plain English. The result: fully playable browser games, written from scratch without touching a line of code myself.
         </p>
       </header>
 
