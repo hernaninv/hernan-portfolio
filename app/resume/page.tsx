@@ -80,7 +80,7 @@ export default function ResumePage() {
       <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h2 className="text-2xl font-semibold text-slate-900">Profile</h2>
         <p className="mt-3 text-lg leading-relaxed text-slate-700">
-          Financial & Business Analyst with 10+ years of experience supporting budgeting,
+          AI-driven Business & Financial Data Analyst with 10+ years of experience supporting budgeting,
           forecasting, variance analysis, and data-driven decision-making in global organizations.
           Strong background in financial planning, KPI tracking, pricing, and cost structure analysis,
           working closely with Finance, Sales, Operations, and Product stakeholders. Advanced Excel
