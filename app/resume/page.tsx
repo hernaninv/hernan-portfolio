@@ -1,5 +1,6 @@
 import { PrimaryButton } from "@/lib/ui";
 import FadeIn from "@/components/fade-in";
+import Counter from "@/components/counter";
 
 const experience = [
   {
@@ -91,6 +92,19 @@ export default function ResumePage() {
           working closely with Finance, Sales, Operations, and Product stakeholders. Advanced Excel
           expertise complemented by formal training in BI, SQL, Python, and analytics automation.
         </p>
+      </section>
+      </FadeIn>
+
+      {/* Impact at a Glance */}
+      <FadeIn delay={0.05}>
+      <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
+        <h2 className="text-2xl font-semibold text-slate-900">Impact at a Glance</h2>
+        <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <Counter value={10} suffix="+" label="Years of Experience" />
+          <Counter value={90} suffix="%" label="Pricing Accuracy Improvement" />
+          <Counter value={50} suffix="%" label="Reduction in Time-to-Market" />
+          <Counter value={50} suffix="%" label="Less Manual Processing Time" />
+        </div>
       </section>
       </FadeIn>
 
