@@ -10,6 +10,7 @@
 
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -19,6 +20,59 @@
             background-repeat: no-repeat;
             font-family: 'Segoe UI', Tahoma, sans-serif;
             overflow: hidden;
+        }
+
+        /* ── Mobile controls ─────────────────────────────────────── */
+        #mobile-controls {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 22px;
+            padding-bottom: 24px;
+        }
+
+        .mob-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .mob-btn {
+            width: 68px;
+            height: 68px;
+            background: rgba(255,255,255,0.12);
+            border: 1.5px solid rgba(255,255,255,0.28);
+            border-radius: 16px;
+            color: white;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+            touch-action: none;
+            -webkit-tap-highlight-color: transparent;
+            transition: background 0.08s;
+        }
+
+        .mob-btn.pressed { background: rgba(255,255,255,0.34); }
+
+        .mob-btn-wide {
+            width: 146px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                justify-content: flex-start;
+                overflow-y: auto;
+                overflow-x: hidden;
+                padding-top: 18px;
+            }
+            #mobile-controls { display: flex; }
+            .controls-box { display: none; }
         }
 
         #bg-btn {
@@ -232,6 +286,20 @@
         </div>
     </div>
 
+</div>
+
+<!-- Mobile touch controls -->
+<div id="mobile-controls">
+    <div class="mob-row">
+        <button class="mob-btn" id="mb-left">←</button>
+        <button class="mob-btn" id="mb-rotate">↻</button>
+        <button class="mob-btn" id="mb-right">→</button>
+    </div>
+    <div class="mob-row">
+        <button class="mob-btn" id="mb-down">↓</button>
+        <button class="mob-btn mob-btn-wide" id="mb-drop">▼ CAÍDA</button>
+        <button class="mob-btn" id="mb-pause">⏸</button>
+    </div>
 </div>
 
 <script>
@@ -477,52 +545,91 @@ function startGame() {
     raf = requestAnimationFrame(loop);
 }
 
-// ── input ─────────────────────────────────────────────────────────────────────
+// ── actions (shared by keyboard + touch) ──────────────────────────────────────
+
+function doLeft() {
+    if (!over && !paused && piece && valid(piece.shape, piece.x - 1, piece.y)) { piece.x--; draw(); }
+}
+function doRight() {
+    if (!over && !paused && piece && valid(piece.shape, piece.x + 1, piece.y)) { piece.x++; draw(); }
+}
+function doDown() {
+    if (!over && !paused && piece && valid(piece.shape, piece.x, piece.y + 1)) { piece.y++; lastTs = performance.now(); draw(); }
+}
+function doRotate() {
+    if (over || paused || !piece) return;
+    const rot = rotate90(piece.shape);
+    for (const dx of [0, -1, 1, -2, 2]) {
+        if (valid(rot, piece.x + dx, piece.y)) { piece.shape = rot; piece.x += dx; break; }
+    }
+    draw();
+}
+function doDrop() {
+    if (over || paused || !piece) return;
+    while (valid(piece.shape, piece.x, piece.y + 1)) piece.y++;
+    moveDown(); lastTs = performance.now(); draw();
+}
+function doPause() {
+    if (over) return;
+    paused = !paused;
+    document.getElementById('pause-banner').classList.toggle('hidden', !paused);
+    if (!paused) { lastTs = null; raf = requestAnimationFrame(loop); }
+    else cancelAnimationFrame(raf);
+}
+
+// ── keyboard ──────────────────────────────────────────────────────────────────
 
 document.addEventListener('keydown', e => {
     if (over) return;
-
-    if (e.key === 'p' || e.key === 'P') {
-        paused = !paused;
-        document.getElementById('pause-banner').classList.toggle('hidden', !paused);
-        if (!paused) { lastTs = null; raf = requestAnimationFrame(loop); }
-        else cancelAnimationFrame(raf);
-        return;
-    }
-
+    if (e.key === 'p' || e.key === 'P') { doPause(); return; }
     if (paused || !piece) return;
-
     switch (e.key) {
-        case 'ArrowLeft':
-            e.preventDefault();
-            if (valid(piece.shape, piece.x - 1, piece.y)) { piece.x--; draw(); }
-            break;
-        case 'ArrowRight':
-            e.preventDefault();
-            if (valid(piece.shape, piece.x + 1, piece.y)) { piece.x++; draw(); }
-            break;
-        case 'ArrowDown':
-            e.preventDefault();
-            if (valid(piece.shape, piece.x, piece.y + 1)) { piece.y++; lastTs = performance.now(); draw(); }
-            break;
-        case 'ArrowUp':
-            e.preventDefault();
-            const rot = rotate90(piece.shape);
-            // wall kick attempts
-            for (const dx of [0, -1, 1, -2, 2]) {
-                if (valid(rot, piece.x + dx, piece.y)) { piece.shape = rot; piece.x += dx; break; }
-            }
-            draw();
-            break;
-        case ' ':
-            e.preventDefault();
-            while (valid(piece.shape, piece.x, piece.y + 1)) piece.y++;
-            moveDown();
-            lastTs = performance.now();
-            draw();
-            break;
+        case 'ArrowLeft':  e.preventDefault(); doLeft();   break;
+        case 'ArrowRight': e.preventDefault(); doRight();  break;
+        case 'ArrowDown':  e.preventDefault(); doDown();   break;
+        case 'ArrowUp':    e.preventDefault(); doRotate(); break;
+        case ' ':          e.preventDefault(); doDrop();   break;
     }
 });
+
+// ── mobile touch ──────────────────────────────────────────────────────────────
+
+function holdBtn(id, fn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let timer;
+    const press = e => { e.preventDefault(); fn(); el.classList.add('pressed'); timer = setInterval(fn, 110); };
+    const release = () => { clearInterval(timer); el.classList.remove('pressed'); };
+    el.addEventListener('touchstart', press, { passive: false });
+    el.addEventListener('touchend', release);
+    el.addEventListener('touchcancel', release);
+}
+
+function tapBtn(id, fn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('touchstart', e => { e.preventDefault(); fn(); el.classList.add('pressed'); }, { passive: false });
+    el.addEventListener('touchend', () => el.classList.remove('pressed'));
+    el.addEventListener('touchcancel', () => el.classList.remove('pressed'));
+}
+
+holdBtn('mb-left',  doLeft);
+holdBtn('mb-right', doRight);
+holdBtn('mb-down',  doDown);
+tapBtn('mb-rotate', doRotate);
+tapBtn('mb-drop',   doDrop);
+tapBtn('mb-pause',  doPause);
+
+// ── responsive scale ──────────────────────────────────────────────────────────
+
+function applyScale() {
+    const container = document.querySelector('.game-container');
+    const available = window.innerWidth - 24;
+    const naturalW = 578;
+    container.style.zoom = Math.min(1, available / naturalW);
+}
+window.addEventListener('resize', applyScale);
+applyScale();
 
 // ── background image ──────────────────────────────────────────────────────────
 
