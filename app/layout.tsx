@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Sidebar from "@/components/sidebar";
 import MobileNav from "@/components/mobile-nav";
+import ScrollButtons from "@/components/scroll-buttons";
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className="min-h-screen bg-slate-100 text-slate-900">
         <MobileNav />
+        <ScrollButtons />
 
         <div className="min-h-screen lg:flex">
           {/* Desktop sidebar */}
