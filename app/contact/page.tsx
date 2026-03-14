@@ -1,5 +1,6 @@
 import { PrimaryButtonSm } from "@/lib/ui";
 import ContactForm from "@/components/contact-form";
+import FadeIn from "@/components/fade-in";
 
 function ContactCard({
   title,
@@ -38,6 +39,7 @@ function ContactCard({
 export default function ContactPage() {
   return (
     <div className="space-y-8">
+      <FadeIn>
       <header className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
           Contact
@@ -46,7 +48,9 @@ export default function ContactPage() {
           Feel free to reach out — whether it's about a project, a collaboration, or just to connect.
         </p>
       </header>
+      </FadeIn>
 
+      <FadeIn delay={0.1}>
       <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         {/* 2x2 grid to avoid overlap */}
         <div className="grid gap-6 md:grid-cols-2">
@@ -65,8 +69,11 @@ export default function ContactPage() {
           />
         </div>
       </section>
+      </FadeIn>
 
+      <FadeIn delay={0.2}>
       <ContactForm />
+      </FadeIn>
     </div>
   );
 }

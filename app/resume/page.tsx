@@ -1,4 +1,5 @@
 import { PrimaryButton } from "@/lib/ui";
+import FadeIn from "@/components/fade-in";
 
 const experience = [
   {
@@ -63,6 +64,7 @@ export default function ResumePage() {
   return (
     <div className="space-y-8">
       {/* Header */}
+      <FadeIn>
       <header className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
@@ -76,8 +78,10 @@ export default function ResumePage() {
           </a>
         </div>
       </header>
+      </FadeIn>
 
       {/* Profile */}
+      <FadeIn delay={0.05}>
       <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h2 className="text-2xl font-semibold text-slate-900">Profile</h2>
         <p className="mt-3 text-lg leading-relaxed text-slate-700">
@@ -88,8 +92,10 @@ export default function ResumePage() {
           expertise complemented by formal training in BI, SQL, Python, and analytics automation.
         </p>
       </section>
+      </FadeIn>
 
       {/* Experience */}
+      <FadeIn delay={0.1}>
       <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h2 className="text-2xl font-semibold text-slate-900">Experience</h2>
         <div className="mt-6 space-y-8">
@@ -112,8 +118,10 @@ export default function ResumePage() {
           ))}
         </div>
       </section>
+      </FadeIn>
 
       {/* Skills + Education grid */}
+      <FadeIn delay={0.1}>
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Technical Skills */}
         <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
@@ -148,8 +156,10 @@ export default function ResumePage() {
           </div>
         </section>
       </div>
+      </FadeIn>
 
       {/* Certifications + Languages grid */}
+      <FadeIn delay={0.1}>
       <div className="grid gap-8 lg:grid-cols-2">
         {/* Certifications */}
         <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
@@ -180,6 +190,7 @@ export default function ResumePage() {
           </div>
         </section>
       </div>
+      </FadeIn>
     </div>
   );
 }

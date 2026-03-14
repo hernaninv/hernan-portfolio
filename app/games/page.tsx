@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FadeIn from "@/components/fade-in";
 
 const games = [
   {
@@ -18,6 +19,7 @@ const games = [
 export default function GamesPage() {
   return (
     <div className="space-y-8">
+      <FadeIn>
       <header className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <h1 className="text-4xl font-semibold tracking-tight text-slate-900">
           Games
@@ -26,7 +28,9 @@ export default function GamesPage() {
           These games were built entirely through conversational AI development — no manual coding. Using <strong>Claude Code</strong>, I described each game&apos;s mechanics, iteratively refined the gameplay, and debugged edge cases — all in plain English. The result: fully playable browser games, written from scratch without touching a line of code myself.
         </p>
       </header>
+      </FadeIn>
 
+      <FadeIn delay={0.1}>
       <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <div className="grid gap-6 md:grid-cols-2">
           {games.map((game) => (
@@ -54,6 +58,7 @@ export default function GamesPage() {
           ))}
         </div>
       </section>
+      </FadeIn>
     </div>
   );
 }

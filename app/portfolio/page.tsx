@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PrimaryButtonSm } from "@/lib/ui";
+import FadeIn from "@/components/fade-in";
 
 function ProjectCard({
   title,
@@ -77,6 +78,7 @@ function ProjectCard({
 export default function PortfolioPage() {
   return (
     <div className="space-y-8">
+      <FadeIn>
       <header className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
         <div className="grid gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           {/* Texto */}
@@ -103,8 +105,10 @@ export default function PortfolioPage() {
           </div>
         </div>
       </header>
+      </FadeIn>
 
       <div className="grid gap-6">
+        <FadeIn>
         <ProjectCard
           title="SPY ROI ML Model"
           objective="Machine learning model to estimate the probability that the S&P 500 Index will achieve a 6-month forward return greater than +5%. The project includes full feature engineering, model training, evaluation, interpretation, and reproducibility steps."
@@ -117,7 +121,9 @@ export default function PortfolioPage() {
           image="/images/projects/spy-roi.png"
           href="https://github.com/hernaninv/SPY-ROI-120d-ML-Model"
         />
+        </FadeIn>
 
+        <FadeIn>
         <ProjectCard
           title="Dynamic Pricing & Quoting Tool (Excel + VBA)"
           objective="BOM-driven costing + bundles + guardrails + PDF/Excel export for a furniture manufacturer."
@@ -131,7 +137,9 @@ export default function PortfolioPage() {
           image="/images/projects/dynamic-pricing.png"
           href="https://github.com/hernaninv/Furniture_Project"
         />
+        </FadeIn>
 
+        <FadeIn>
         <ProjectCard
           title="Telecom Churn ML"
           objective="Predict churn and identify key drivers to support retention strategies."
@@ -144,7 +152,9 @@ export default function PortfolioPage() {
           image="/images/projects/telecom-churn.png"
           href="https://github.com/hernaninv/TelecomChurn-ML-Project"
         />
+        </FadeIn>
 
+        <FadeIn>
         <ProjectCard
           title="Happy Insurance BI"
           objective="Build BI dashboards for KPIs, trends and operational visibility."
@@ -157,6 +167,7 @@ export default function PortfolioPage() {
           image="/images/projects/happy-insurance.png"
           href="https://github.com/hernaninv/HappyInsurance-BI-Project"
         />
+        </FadeIn>
       </div>
     </div>
   );
