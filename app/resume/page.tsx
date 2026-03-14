@@ -36,6 +36,7 @@ const experience = [
 const technicalSkills = [
   { category: "Business & Analytics", items: ["Excel (Advanced)", "Power Query & Power Pivot", "Power BI", "Tableau"] },
   { category: "Data & Programming", items: ["SQL", "Python", "MongoDB"] },
+  { category: "AI Tools", items: ["Claude Code & Claude AI", "OpenAI Tools", "Google AI Tools"] },
   { category: "Systems", items: ["Priority ERP", "Salesforce"] },
   { category: "Other", items: ["GitHub", "Data Modeling", "Reporting Automation"] },
 ];
