@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Database, BarChart3, Code2, FileSpreadsheet, MapPin } from "lucide-react";
-import { PrimaryButton, SecondaryButton } from "@/lib/ui";
+import { Database, BarChart3, Code2, FileSpreadsheet } from "lucide-react";
+import { PrimaryButton } from "@/lib/ui";
 import FadeIn from "@/components/fade-in";
+import HeroSection from "@/components/hero-section";
 
 const projects = [
   {
@@ -35,59 +36,7 @@ export default function Home() {
   return (
     <div className="space-y-10">
       {/* Hero */}
-      <FadeIn>
-        <section className="rounded-3xl bg-white p-10 ring-1 ring-slate-200/60 shadow-card">
-          <div className="grid gap-10 lg:grid-cols-[1fr_340px] lg:items-center">
-            {/* Left: text */}
-            <div>
-              <h1 className="text-6xl font-semibold tracking-tight text-slate-900">
-                Hernan Aronson
-              </h1>
-
-              <div className="mt-4 inline-flex items-center gap-2 rounded-2xl bg-blue-50 px-4 py-2 ring-1 ring-blue-200">
-                <span className="text-xl font-semibold text-blue-600">
-                  AI-driven Business & Financial Data Analyst
-                </span>
-              </div>
-
-              <div className="mt-3 flex items-center gap-1.5 text-sm text-slate-500">
-                <MapPin size={14} />
-                <span>Hod Hasharon, Israel</span>
-              </div>
-
-              <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
-                Turning data into clear, actionable business insights using SQL, Excel, Python and BI tools.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/portfolio" className={PrimaryButton}>
-                  View Portfolio
-                </Link>
-                <Link href="/resume" className={SecondaryButton}>
-                  Resume
-                </Link>
-                <Link href="/contact" className={SecondaryButton}>
-                  Contact
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: photo */}
-            <div className="lg:justify-self-end">
-              <div className="relative overflow-hidden rounded-3xl ring-1 ring-slate-200/60 shadow-card">
-                <Image
-                  src="/images/hernan060126.png"
-                  alt="Hernan Aronson"
-                  width={340}
-                  height={425}
-                  className="h-auto w-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </FadeIn>
+      <HeroSection />
 
       {/* Skills */}
       <FadeIn delay={0.1}>
