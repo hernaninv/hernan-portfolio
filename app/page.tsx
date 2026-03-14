@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Database, BarChart3, Code2, MapPin } from "lucide-react";
+import { Database, BarChart3, Code2, FileSpreadsheet, MapPin } from "lucide-react";
 import { PrimaryButton, SecondaryButton } from "@/lib/ui";
 
 const projects = [
@@ -88,7 +88,7 @@ export default function Home() {
       </section>
 
       {/* Skills */}
-      <section className="grid gap-6 lg:grid-cols-3">
+      <section className="grid gap-6 lg:grid-cols-2">
         <Link href="/portfolio" className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover transition-transform hover:scale-[1.01]">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 ring-1 ring-blue-200">
             <Database size={20} className="text-blue-600" />
@@ -119,6 +119,17 @@ export default function Home() {
           <p className="mt-3 text-base leading-relaxed text-slate-700">
             Exploratory data analysis, feature engineering and practical analytics
             workflows.
+          </p>
+        </Link>
+
+        <Link href="/portfolio" className="rounded-3xl bg-white p-7 ring-1 ring-slate-200/60 shadow-card shadow-card-hover transition-transform hover:scale-[1.01]">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 ring-1 ring-blue-200">
+            <FileSpreadsheet size={20} className="text-blue-600" />
+          </div>
+          <h3 className="mt-4 text-xl font-semibold text-slate-900">Excel & Automation</h3>
+          <p className="mt-3 text-base leading-relaxed text-slate-700">
+            Advanced Excel, VBA and Power Query for financial modeling, data transformation
+            and reporting automation — turning complex spreadsheets into reliable business tools.
           </p>
         </Link>
       </section>
